@@ -15,3 +15,26 @@
       # See 'snapcraft plugins'
       plugin: nil
   
+
+
+name: hello-snap-mellgood
+version: '0.2'
+summary: Just my first snapcraft build
+description: |
+  This is just my first test to publish on snap. It is just an hello world
+  in Italian language.
+grade: devel
+confinement: devmode
+
+
+parts:
+  test-offlineimap:
+    plugin: python
+    python-version: python3
+    source: .
+    stage-packages:
+      - python-six
+
+apps:
+  hello-snap-mellgood:
+    command: bin/hello-snap-mellgood
